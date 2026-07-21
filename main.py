@@ -17,7 +17,7 @@ app.add_middleware(
 class DateRequest(BaseModel):
     date_string: str
 # FastAPI mein GET route add karna hai:
-@app.get("/")
+@app.get("/", methods=["GET", "POST", "HEAD"])
 def home():
     return {"status": "Server is awake and running!"}
 
