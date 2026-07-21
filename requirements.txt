@@ -1,3 +1,10 @@
 fastapi
 uvicorn
+python-multipart
+pydantic
 dateparser
+pytz
+tzlocal
+httpx
+beautifulsoup4
+datefinder
