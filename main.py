@@ -16,6 +16,10 @@ app.add_middleware(
 
 class DateRequest(BaseModel):
     date_string: str
+# FastAPI mein GET route add karna hai:
+@app.get("/")
+def home():
+    return {"status": "Server is awake and running!"}
 
 @app.post("/parse-date")
 def parse_date(request: DateRequest):
@@ -26,4 +30,4 @@ def parse_date(request: DateRequest):
         # ISO format mein return karega (e.g., 2026-07-20T19:37:09)
         return {"status": "success", "parsed_date": parsed_date.isoformat()}
     else:
-        return {"status": "error", "message": "Date samajh nahi aayi"}
+        return {"status": "error", "message": "Invalid date string"}
